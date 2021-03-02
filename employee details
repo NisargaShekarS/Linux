@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct student{
+    char usn[10];
+    char name[10];
+    char branch[10];
+}s1;
+struct emp{
+    char id[10];
+    char name[10];
+    char address[10];
+}e1;
+struct faculty{
+    char name[10];
+    int age;
+}f1;
+int main()
+{
+    printf("Student details\n");
+    scanf("%s %s %s",&s1.usn,&s1.name,&s1.branch);
+    printf("%s\t %s\t %s\t",s1.usn,s1.name,s1.branch);
+    
+    printf("emp details\n");
+    scanf("%s %s %s",&e1.id,&e1.name,&e1.address);
+    printf("%s\t %s\t %s\t",e1.id,e1.name,e1.address);
+    
+    printf("faculty details\n");
+    scanf("%s %d",&f1.name,&f1.age);
+    printf("%s\t %d",f1.name,f1.age);
+    return 0;
+}
+
+
