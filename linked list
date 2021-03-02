@@ -1,0 +1,108 @@
+#include <stdio.h>
+struct node
+{
+int data;
+struct node *link;
+};
+typedef struct node ll;
+ll *first=NULL,*temp ;int choice=0,sizeoflist,data=0;
+int main ()
+{
+while(choice != 4)
+{
+ menu();
+ scanf("%d",&choice);
+ switch(choice)
+ {
+ case 1:insertbeg();break;
+ case 2: insertpos(); break;
+ case 3:print();break;
+ case 4: exit(0);
+ default : printf("Wrong choice");
+ }
+
+
+}
+return 0;
+}
+void menu()
+{
+printf("\nEnter your choice\n");
+ printf("1.Insertbeg\n 2.insertpos\n 3.print\n exit\n ");
+ return;
+}
+void insertbeg()
+{
+ if(first == NULL)
+ {
+ first = (ll *)malloc(sizeof(ll));
+ ++sizeoflist;
+ printf("Enter data for the node \n");
+ scanf("%d",&data);
+ first->data = data;
+ first->link = NULL;
+ }
+
+ else
+ {
+ temp = (ll *)malloc(sizeof(ll));
+ printf("Enter data for the node \n");
+ scanf("%d",&data);
+ temp->data = data;
+ temp->link = first;
+ first = temp;
+ }
+ }
+void insertpos()
+{
+int position=0; int tdata; ll * temp1;
+printf("Enter after which node you want to insert node ");
+ scanf("%d",&position);
+ if(first == NULL)
+ {
+ printf("Linked List Does not exit ");
+ return;
+ }
+ if(position == 0)
+ {
+
+ insertbeg();
+ return;
+ }
+
+ if(position > sizeoflist )
+ {
+ printf("Out of bounds ");
+ return ;
+
+ }
+ temp = first;
+ for (int i = 1; i < position; i++) {
+ temp = temp->link;
+ }
+ printf("Enter data");
+ scanf("%d",&tdata);
+ temp1 = (ll *) malloc(sizeof(ll));
+ temp1->link = temp->link;
+ temp->link = temp1;
+ temp1->data = tdata;
+ ++sizeoflist;
+}
+void print()
+
+{
+if(first == NUULL)
+{
+ printf("List is empty ");
+ }
+else
+{
+ temp = first;
+ while(temp != NULL)
+ {
+ printf(" [%d %u]-> \t",temp->data,temp->link);
+ temp = temp -> link;
+
+ }
+}
+} 
