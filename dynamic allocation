@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+int a[5];
+a[0]=100;
+a[1]=200;
+
+int *p;
+p=(int*)malloc(sizeof(int)*5));
+*(p+0)=100;
+*(p+1)=200;
+printf("%d\n",*(p+0));
+printf("%d\n",*(p+1));
+}
